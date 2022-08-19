@@ -7,9 +7,11 @@ public:
 	LinkedList();
 	LinkedList(const LinkedList<T>& original);
 	void append(const T& value);
-	void remove(int index);
+	void remove(const T& value);
 	void reverse();
-	bool find(const T& value);
+	bool contains(const T& value);
+	int getSize();
+	std::string print();
 
 private:
 	struct Node {
@@ -45,11 +47,53 @@ void LinkedList<T>::append(const T& val) {
 	Node *h = &head;
 	Node *a = new Node{ val, nullptr };
 	
-	while (h->next != nullptr) {
+	if (size == 0) {
+		head = *a;
+		size++;
+	}
+	else {
+		while (h->next != nullptr) {
+			h = h->next;
+		}
+		h->next = a;
+		size++;
+	}
+}
+
+template <typename T>
+void LinkedList<T>::remove(const T& value) {
+
+}
+
+template <typename T>
+void LinkedList<T>::reverse() {
+
+}
+
+template <typename T>
+bool LinkedList<T>::contains(const T& value) {
+
+}
+
+template <typename T>
+int LinkedList<T>::getSize() {
+	return size;
+}
+
+template <typename T>
+std::string LinkedList<T>::print() {
+	std::string printableList;
+	Node *h = &head;
+
+	while (h != nullptr) {
+		printableList.append(h->value);
+		if (h->next != nullptr) {
+			printableList.append(", ");
+		}
 		h = h->next;
 	}
-	h->next = a;
-	size++;
+	
+	return printableList;
 }
 
 template <typename T>
