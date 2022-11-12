@@ -3,16 +3,35 @@
 using namespace std;
 
 int main() {
-	int llSize, val;
+
+	LinkedList<string> stringList;
+	LinkedList<string> stringList2(stringList);
+	stringList.append("Hello!");
+	stringList.append("Hello again!");
+
+
+
+
+
+
+
+
+	/*
+	int llSize;
+	string val;
 
 	cout << "Enter linked list size: ";
 	cin >> llSize;
-	LinkedList<int> ll;
+	LinkedList<string> ll;
 
 	for (int x = 0; x < llSize; x++) {
-		cout << "\nEnter a new value: ";
+		cout << "Enter a new value: ";
 		cin >> val;
 		ll.append(val);
 	}
 
+	cout << ll.print();
+	ll.remove(val);
+	cout << ll.print();
+	*/
 }
