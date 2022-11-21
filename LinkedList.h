@@ -7,10 +7,10 @@ public:
 	LinkedList();
 	LinkedList(const LinkedList<T>& original);
 	void append(const T& value);
-	/*
 	void remove(const T& value);
-	void reverse();
 	bool contains(const T& value);
+	/*
+	void reverse();
 	T operator[](const int index) const;
 	T& operator[](const int index);
 	int getSize();
@@ -60,12 +60,10 @@ LinkedList<T>::LinkedList(const LinkedList<T>& original) {
 template <typename T>
 void LinkedList<T>::append(const T& value) {
 	Node *h = &head;
-	std::cout << "reachedHere1";
 	Node *a = ( value, nullptr );
 	
 	if (size == 0) {
 		head.value = value;
-		std::cout << "reachedHere2";
 		size++;
 	}
 	else {
@@ -75,48 +73,6 @@ void LinkedList<T>::append(const T& value) {
 		h->next = a;
 		size++;
 	}
-}
-
-/*
-template <typename T>
-void LinkedList<T>::remove(const T& value) {
-	Node* h = &head;
-	Node* prev = nullptr;
-
-	if (!contains(value)) {
-		return;
-	}
-	else {
-		while (head.value == value) {
-			if (head.next == nullptr) {
-				head = { T(), nullptr };
-				size = 0;
-			}
-			else {
-				h = head.next;
-				head = h;
-				delete h;
-				h = &head;
-				size--;
-			}
-		}
-		while (h.next != nullptr) {
-			if (h == head.next) {
-				*prev = head;
-			}
-			h = h->next;
-			prev = prev->next;
-		}
-		if (h->next == nullptr) {
-			
-		}
-		size--;
-	}
-}
-
-template <typename T>
-void LinkedList<T>::reverse() {
-
 }
 
 template <typename T>
@@ -140,6 +96,35 @@ bool LinkedList<T>::contains(const T& value) {
 	}
 }
 
+
+template <typename T>
+void LinkedList<T>::remove(const T& value) {
+	Node* h = &head;
+	Node* prev = h;
+
+	if (size == 1 && head.value == value) {
+		delete head;
+	}
+
+	if (!contains(value)) {
+		return;
+	}
+	else {
+		while (h.next != nullptr) {
+			if (h->value == value) {
+				
+				size--;
+			}
+		}
+	}
+}
+
+/*
+template <typename T>
+void LinkedList<T>::reverse() {
+
+}
+ 
 template <typename T>
 int LinkedList<T>::getSize() {
 	return size;
