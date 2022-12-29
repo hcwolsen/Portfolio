@@ -17,7 +17,7 @@ public:
 	bool contains(const T& value);
 	void reverse();
 	int getSize();
-	std::string getPrintable();
+	void print();
 
 private:
 	struct Node {
@@ -48,7 +48,9 @@ LinkedList<T>::LinkedList(const LinkedList<T>& original) {
 
 	for (int x = 0; x < original.size; x++) {
 		newHead->value = originalHead->value;
-		newHead->next = new Node{ T(), nullptr };
+		if (x != original.size - 1) {
+			newHead->next = new Node{ T(), nullptr };
+		}
 		originalHead = originalHead->next;
 		newHead = newHead->next;
 	}
@@ -59,7 +61,7 @@ void LinkedList<T>::append(const T& value) {
 	Node* h = head;
 	Node* a = new Node{ value, nullptr };
 
-	if (size == 0) {
+	if (head->next == nullptr && size == 0) {
 		head->value = value;
 		size++;
 	}
@@ -156,18 +158,17 @@ int LinkedList<T>::getSize() {
 }
 
 template <typename T>
-std::string LinkedList<T>::getPrintable() {
-	std::string printableList;
+void LinkedList<T>::print() {
 	Node* h = head;
+	 
 	while (h != nullptr) {
-		printableList.append(h->value);
+		std::cout << h->value;
 		if (h->next != nullptr) {
-			printableList.append(", ");
+			std::cout << ", ";
 		}
 		h = h->next;
 	}
-
-	return printableList;
+	std::cout << "\n";
 }
 
 template <typename T>

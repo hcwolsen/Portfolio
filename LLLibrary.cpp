@@ -14,27 +14,27 @@ int main() {
 	stringList.append("Two");
 	stringList.append("Three");
 	stringList.append("Four");
-	cout << stringList.getPrintable() << endl;
+	stringList.print();
 	cout << "Success\n";
 
 	cout << "\nCalling the copy constructor on the original object and printing the copy's contents: ";
 	LinkedList<string> stringList2(stringList);
-	cout << stringList2.getPrintable() << endl;
+	stringList2.print();
 	cout << "Success\n";
 
 	cout << "\nCalling the reverse() function on the original list to verify the copy is a shallow copy...";
 	stringList.reverse();
 	cout << "\nOriginal list's new contents: ";
-	cout << stringList.getPrintable() << endl;
+	stringList.print();
 	cout << "Copy's contents: ";
-	cout << stringList2.getPrintable() << endl;
+	stringList2.print();
 	cout << "Copy's contents are unaffected, success\n";
 
-	cout << "\nCalling the remove() function on the original object and removing the last two nodes...\n";
+	cout << "\nCalling the remove() function on the original object and removing the first two nodes...\n";
 	stringList.remove("Three");
 	stringList.remove("Four");
 	cout << "Object's new contents: ";
-	cout << stringList.getPrintable() << endl;
+	stringList.print();
 	cout << "Success\n";
 
 	cout << "\nTesting getHead() and getTail() on original object...\n";
@@ -44,7 +44,7 @@ int main() {
 
 	cout << "\nTesting contains() on the original object...\n";
 	cout << "Original object's contents: ";
-	cout << stringList.getPrintable() << endl;
+	stringList.print();
 	cout << "Result of contains(\"One\"): " << stringList.contains("One") << endl;
 	cout << "Success\n";
 
@@ -52,7 +52,7 @@ int main() {
 	cout << "\nSize of the original: " << stringList.getSize() << endl;
 	cout << "Size of the copy: " << stringList2.getSize() << endl;
 
-
+	cout << "\n-----------------------------------------------------------------------------------------------------\n\n";
 
 	cout << "Creating a LinkedList object of type int and appending five values: ";
 	LinkedList<int> intList;
@@ -61,27 +61,27 @@ int main() {
 	intList.append(2);
 	intList.append(3);
 	intList.append(4);
-	cout << intList.getPrintable() << endl;
+	intList.print();
 	cout << "Success\n";
 
 	cout << "\nCalling the copy constructor on the original object and printing the copy's contents: ";
 	LinkedList<int> intList2(intList);
-	cout << intList2.getPrintable() << endl;
+	intList2.print();
 	cout << "Success\n";
 
 	cout << "\nCalling the reverse() function on the original list to verify the copy is a shallow copy...";
 	intList.reverse();
 	cout << "\nOriginal list's new contents: ";
-	cout << intList.getPrintable() << endl;
+	intList.print();
 	cout << "Copy's contents: ";
-	cout << intList2.getPrintable() << endl;
+	intList2.print();
 	cout << "Copy's contents are unaffected, success\n";
 
-	cout << "\nCalling the remove() function on the original object and removing the last two nodes...\n";
+	cout << "\nCalling the remove() function on the original object and removing the first two nodes...\n";
 	intList.remove(3);
 	intList.remove(4);
 	cout << "Object's new contents: ";
-	cout << intList.getPrintable() << endl;
+	intList.print();
 	cout << "Success\n";
 
 	cout << "\nTesting getHead() and getTail() on original object...\n";
@@ -91,7 +91,7 @@ int main() {
 
 	cout << "\nTesting contains() on the original object...\n";
 	cout << "Original object's contents: ";
-	cout << intList.getPrintable() << endl;
+	intList.print();
 	cout << "Result of contains(\"One\"): " << intList.contains(1) << endl;
 	cout << "Success\n";
 
@@ -99,36 +99,36 @@ int main() {
 	cout << "\nSize of the original: " << intList.getSize() << endl;
 	cout << "Size of the copy: " << intList2.getSize() << endl;
 
-
-
-	cout << "Creating a LinkedList object of type int and appending five values: ";
+	cout << "\n-----------------------------------------------------------------------------------------------------\n\n";
+	
+	cout << "Creating a LinkedList object of type char and appending five values: ";
 	LinkedList<char> charList;
 	charList.append('a');
 	charList.append('b');
 	charList.append('c');
 	charList.append('d');
 	charList.append('e');
-	cout << charList.getPrintable() << endl;
+	charList.print();
 	cout << "Success\n";
 
 	cout << "\nCalling the copy constructor on the original object and printing the copy's contents: ";
 	LinkedList<char> charList2(charList);
-	cout << charList2.getPrintable() << endl;
+	charList2.print();
 	cout << "Success\n";
 
 	cout << "\nCalling the reverse() function on the original list to verify the copy is a shallow copy...";
 	charList.reverse();
 	cout << "\nOriginal list's new contents: ";
-	cout << charList.getPrintable() << endl;
+	charList.print();
 	cout << "Copy's contents: ";
-	cout << charList2.getPrintable() << endl;
+	charList2.print();
 	cout << "Copy's contents are unaffected, success\n";
 
-	cout << "\nCalling the remove() function on the original object and removing the last two nodes...\n";
+	cout << "\nCalling the remove() function on the original object and removing the first two nodes...\n";
 	charList.remove('d');
 	charList.remove('e');
 	cout << "Object's new contents: ";
-	cout << charList.getPrintable() << endl;
+	charList.print();
 	cout << "Success\n";
 
 	cout << "\nTesting getHead() and getTail() on original object...\n";
@@ -138,7 +138,7 @@ int main() {
 
 	cout << "\nTesting contains() on the original object...\n";
 	cout << "Original object's contents: ";
-	cout << charList.getPrintable() << endl;
+	charList.print();
 	cout << "Result of contains(\"One\"): " << charList.contains('a') << endl;
 	cout << "Success\n";
 
