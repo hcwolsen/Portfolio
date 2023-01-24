@@ -4,7 +4,7 @@
 class Staff {
 public:
 	Staff();
-	Staff(int a, int s, int yW, int yH, int id, std::string t, std::string n, std::string g);
+	Staff(const int& a, const int& s, const int& yW, const int& yH, const int& id, const std::string& t, const std::string& n, const std::string& g);
 	int getAge();
 	int getSalaryUSD();
 	int getYearsWorked();
@@ -13,14 +13,14 @@ public:
 	std::string getJobTitle();
 	std::string getName();
 	std::string getGender();
-	int setAge(int a);
-	int setSalaryUSD(int s);
-	int setYearsWorked(int yW);
-	int setYearHired(int yH);
-	int setEmployeeID(int id);
-	std::string setJobTitle(std::string t);
-	std::string setName(std::string n);
-	std::string setGender(std::string g);
+	int setAge(const int& a);
+	int setSalaryUSD(const int& s);
+	int setYearsWorked(const int& yW);
+	int setYearHired(const int& yH);
+	int setEmployeeID(const int& id);
+	std::string setJobTitle(const std::string& t);
+	std::string setName(const std::string& n);
+	std::string setGender(const std::string& g);
 
 protected:
 	int age;
@@ -44,7 +44,7 @@ Staff::Staff() {
 	gender = "";
 }
 
-Staff::Staff(int a, int s, int yW, int yH, int id, std::string t, std::string n, std::string g) {
+Staff::Staff(const int& a, const int& s, const int& yW, const int& yH, const int& id, const std::string& t, const std::string& n, const std::string& g) {
 	age = a;
 	salaryUSD = s;
 	yearsWorked = yW;
@@ -68,7 +68,7 @@ int Staff::getYearsWorked() {
 }
 
 int Staff::getYearHired() {
-	return getYearHired;
+	return yearHired;
 }
 
 int Staff::getEmployeeID() {
@@ -87,35 +87,35 @@ std::string Staff::getGender() {
 	return gender;
 }
 
-int Staff::setAge(int a) {
+int Staff::setAge(const int& a) {
 	age = a;
 }
 
-int Staff::setSalaryUSD(int s) {
+int Staff::setSalaryUSD(const int& s) {
 	salaryUSD = s;
 }
 
-int Staff::setYearsWorked(int yW) {
+int Staff::setYearsWorked(const int& yW) {
 	yearsWorked = yW;
 }
 
-int Staff::setYearHired(int yH) {
+int Staff::setYearHired(const int& yH) {
 	yearHired = yH;
 }
 
-int Staff::setEmployeeID(int id) {
+int Staff::setEmployeeID(const int& id) {
 	employeeID = id;
 }
 
-std::string Staff::setJobTitle(std::string t) {
+std::string Staff::setJobTitle(const std::string& t) {
 	jobTitle = t;
 }
 
-std::string Staff::setName(std::string n) {
+std::string Staff::setName(const std::string& n) {
 	name = n;
 }
 
-std::string Staff::setGender(std::string g) {
+std::string Staff::setGender(const std::string& g) {
 	gender = g;
 }
 
